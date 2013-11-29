@@ -19,7 +19,7 @@ layout: default
 <script>
 $.ajax({
 	type: 'GET',
-	url: "https://disqus.com/api/3.0/Category/listThreads.jsonp",
+	url: "https://disqus.com/api/3.0/categories/listThreads.jsonp",
 	data: { 
 		api_key: '{{ site.disqus_publickey }}',
 		category : '{{ page.id }}'
