@@ -1,7 +1,8 @@
 ---
 layout: none
 ---
-{{% for page in site.pages %}
+{
+{% for page in site.pages %}
 	{% if page.category == true %}
 		"{{ page.id }}" : {
 			id: {{ page.id }},
@@ -10,4 +11,5 @@ layout: none
 			icon: "{{ page.icon }}"
 		}{% if forloop.last == false %},{% endif %}
 	{% endif %}
-{% endfor %}}
+{% endfor %}
+}
