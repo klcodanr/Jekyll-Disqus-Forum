@@ -1,9 +1,13 @@
+---
+layout: none
+---
+
 $.ajax({
 	type: 'GET',
 	url: "https://disqus.com/api/3.0/categories/listThreads.jsonp",
 	data: { 
 		api_key: '{{ site.disqus_publickey }}',
-		category : '{{ page.id }}'
+		category : $('#threads').getAttr('data-id')
 	},
 	cache: false,
 	dataType: "jsonp",
