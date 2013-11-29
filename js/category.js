@@ -14,6 +14,7 @@ $.ajax({
 	success: function (result) {
 		var authors = [];
 		$.Mustache.load('{{ site.baseurl }}/templates/thread.html').done(function() {
+			$('#thread-loader').hide();
 	    	$.each(result.response,function(idx, thread){
 	    		thread.startDate = new Date(thread.createdAt).toLocaleString();
 	    		if(authors.indexOf(thread.author) == -1){
