@@ -18,6 +18,7 @@
 		<script src="{{ site.baseurl }}/js/bootstrap.min.js"></script>
 		<script src="{{ site.baseurl }}/js/jquery-mustache.js"></script>
 		<script src="{{ site.baseurl }}/js/mustache.js"></script>
+		{% for script in page.scripts %}<script src="{{ site.baseurl }}{{ script }}"></script>{% endfor %} 
 	</head>
 	<body>
 		<div class="container">
