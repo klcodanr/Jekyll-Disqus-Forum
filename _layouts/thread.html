@@ -22,6 +22,7 @@ var qs = (function(a) {
     var disqus_shortname = '{{ site.disqus_shortname }}'; 
     var disqus_identifier = qs['thread'];
     var disqus_title = qs['thread'];
+    var disqus_category_id = qs['category-id'];
     document.title = qs['thread'] + ' | ' + document.title;
     var disqus_url = '{{ site.url }}/thread.html?thread='+encodeURIComponent(qs['thread'])+'&category='+encodeURIComponent(qs['category'])+'&category-title='+encodeURIComponent(qs['category-title']);
     (function() {
