@@ -24,4 +24,5 @@ permalink: /category/:title
 # The disqus shortname for your forum
 disqus_shortname: jekylldisqusforum
 
+# The public key for your disqus application
 disqus_publickey: cVy9WcjLl6TI8EbBAL6PDy8FqMr4gm3HXXfERv7anOYHj3AZAyO2jD66Pqqe71B0

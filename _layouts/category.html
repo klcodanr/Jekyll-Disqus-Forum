@@ -6,6 +6,10 @@ scripts: [/js/category.js]
 ---
 
 <div class="jumbotron">{{ content }}</div>
+<ol class="breadcrumb">
+	<li><a href="{{site.baseurl}}/">Home</a></li>
+	<li class="active">{{ page.title }}</li>
+</ol>
 <form class="form-inline" role="form" action="{{ site.baseurl }}/thread.html">
 	<div class="form-group">
 		<input type="text" class="form-control" name="thread" placeholder="Enter thread subject" />
