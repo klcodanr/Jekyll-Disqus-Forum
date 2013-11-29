@@ -1,0 +1,34 @@
+---
+layout: default
+---
+
+<script>
+var qs = (function(a) {
+    if (a == "") return {};
+    var b = {};
+    for (var i = 0; i < a.length; ++i)
+    {
+        var p=a[i].split('=');
+        if (p.length != 2) continue;
+        b[p[0]] = decodeURIComponent(p[1].replace(/\+/g, " "));
+    }
+    return b;
+})(window.location.search.substr(1).split('&'));
+</script>
+<a href="javascript:window.location=qs['category']" id="backlink">&lt;&lt; Back to <script>document.write(qs['category-title'])</script></a>
+<h1><script>document.write(qs['thread'])</script></h1>
+<div id="disqus_thread"></div>
+<script>
+    var disqus_shortname = '{{ site.disqus_shortname }}'; 
+    var disqus_identifier = qs['thread'];
+    var disqus_title = qs['thread'];
+    document.title = qs['thread'] + ' | ' + document.title;
+    var disqus_url = '{{ site.url }}/thread.html?thread='+encodeURIComponent(qs['thread'])+'&category='+encodeURIComponent(qs['category'])+'&category-title='+encodeURIComponent(qs['category-title']);
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>

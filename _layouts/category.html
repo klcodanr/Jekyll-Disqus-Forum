@@ -1,0 +1,30 @@
+---
+
+layout: default
+
+---
+
+<div class="jumbotron">{{ content }}</div>
+<form class="form-inline" role="form" action="{{ site.baseurl }}/thread.html">
+	<div class="form-group">
+		<input type="text" class="form-control" name="thread" placeholder="Enter thread subject" />
+	</div>
+	<input type="hidden" name="category" value="{{ site.baseurl}}{{page.url}}" />
+	<input type="hidden" name="category-title" value="{{ page.title }}" />
+	<button type="submit" class="btn btn-default">New Thread</button>
+</form>
+<script>
+$.ajax({
+	type: 'GET',
+	url: "https://disqus.com/api/3.0/forums/listPosts.jsonp",
+	data: { 
+		api_key: '{{ site.disqus_publickey }}',
+		forum : '{{ site.disqus_shortname }}'
+	},
+	cache: false,
+	dataType: "jsonp",
+	success: function (result) {
+		alert(result);
+	}
+});
+</script>

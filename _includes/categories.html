@@ -1,0 +1,19 @@
+<ul class="media-list">
+	{% for page in site.pages %}
+		{% if page.category == true %}
+			<li class="media">
+				{% if page.icon == true %}
+					<a class="pull-left" href="#">
+						<img class="media-object" src="{{ page.icon }}" alt="{{ path.title }}">
+					</a>
+				{% endif %}
+				<div class="media-body">
+					<h4 class="media-heading"><a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a></h4>
+					<p>
+						<small>{{ page.summary }}</small>
+					</p>
+				</div>
+			</li>
+		{% endif %}
+	{% endfor %}
+</ul>
