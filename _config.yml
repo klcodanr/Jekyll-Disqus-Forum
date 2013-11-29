@@ -1,5 +1,5 @@
 # Name of your blog (this will show up at the top of your page and in the RSS feed)
-name: Disqus Forum
+name: Jekyll Disqus Forum
 
 # Short description (goes below the title; it will also be used in the RSS feed)
 description: Forum created in Disqus
@@ -13,7 +13,7 @@ author: Daniel Klco
 baseurl: /Jekyll-Disqus-Forum
 
 # The URL of your actual domain. This will be used to make absolute links in the RSS feed.
-url: http://klcodanr.github.io/Disqus-Forum
+url: http://klcodanr.github.io/Jekyll-Disqus-Forum
 
 # Exclude system files
 exclude: [.gitignore]
