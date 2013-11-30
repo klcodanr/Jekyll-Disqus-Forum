@@ -4,6 +4,7 @@ layout: none
 
 var loadThreads = function(cursor){
 	$("#threads").html('');
+	$('#thread-loader').show();
 	var data = { 
 		api_key: '{{ site.disqus_publickey }}',
 		category : $('#threads').attr('data-id')
