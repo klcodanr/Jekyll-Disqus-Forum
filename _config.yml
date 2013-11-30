@@ -18,9 +18,6 @@ url: http://klcodanr.github.io/Jekyll-Disqus-Forum
 # Exclude system files
 exclude: [.gitignore]
 
-# Set to use a flat hierarchy for the categories
-permalink: /category/:title
-
 # The disqus shortname for your forum
 disqus_shortname: jekylldisqusforum
 
