@@ -59,3 +59,20 @@ var loadThreads = function(cursor){
 	});
 }
 loadThreads();
+var sanitizeThread = function(){
+	var sanitized = $("<div>"+$('#thread-ui').val()+"</div>").text();
+	$('input.thread').val(sanitized);
+	$('span.thread').html(sanitized);
+}
+$('#thread-ui').change(function(){
+	sanitizeThread();
+});
+$('#thread-ui').keyup(function(){
+	sanitizeThread();
+});
+$('#new-thread').submit(function(){
+	if($('.thread').val() == ''){
+		alert('Please enter a thread title');
+		return false;
+	}
+});
