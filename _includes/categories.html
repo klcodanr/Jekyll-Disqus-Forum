@@ -1,19 +1,33 @@
-<ul class="media-list">
-	{% for page in site.pages %}
-		{% if page.category == true %}
-			<li class="media">
-				{% if page.icon == true %}
-					<a class="pull-left" href="#">
-						<img class="media-object" src="{{ page.icon }}" alt="{{ path.title }}">
-					</a>
-				{% endif %}
-				<div class="media-body">
-					<h4 class="media-heading"><a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a></h4>
-					<p>
-						<small>{{ page.summary }}</small>
-					</p>
-				</div>
-			</li>
-		{% endif %}
-	{% endfor %}
-</ul>
+{% for group in site.pages %}
+	{% if group.category-group == true %}
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">{{ group.title }}</h3>
+			</div>
+			<div class="panel-body">
+				<p>
+					<em>{{ group.summary }}</em>
+				</p>
+				<ul class="media-list">
+					{% for category in site.pages %}
+						{% if category.category == true && category.group-id == group.id %}
+							<li class="media">
+								{% if category.icon == true %}
+									<a class="pull-left" href="#">
+										<img class="media-object" src="{{ category.icon }}" alt="{{ category.title }}">
+									</a>
+								{% endif %}
+								<div class="media-body">
+									<h4 class="media-heading"><a href="{{ site.baseurl }}{{ category.url }}">{{ category.title }}</a></h4>
+									<p>
+										<small>{{ category.summary }}</small>
+									</p>
+								</div>
+							</li>
+						{% endif %}
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+	{% endif %}
+{% endfor %}
