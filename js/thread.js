@@ -14,7 +14,7 @@ var qs = (function(a) {
     return b;
 })(window.location.search.substr(1).split('&'));
 var categoryId = qs['category'];
-var threadName = qs['thread']
+var threadName = $("<div>"+qs['thread']+"</div>").text();
 
 // Set the Disqus Variables
 var disqus_shortname = '{{ site.disqus_shortname }}'; 
