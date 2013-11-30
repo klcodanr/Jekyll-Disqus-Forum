@@ -37,7 +37,12 @@ $.ajax({
 		var category = categories[categoryId];
 		$('.category-link').html(category.title);
 		$('.category-link').attr('href', category.url);
+	},
+	error: function(jqXHR, textStatus, errorThrown){
+		alert(textStatus);
+		alert(errorThrown);
 	}
+
 });
 
 
