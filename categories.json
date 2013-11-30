@@ -9,7 +9,7 @@ layout: none
 			"title": "{{ page.title }}",
 			"url": "{{ site.url }}{{ page.url }}",
 			"icon": "{{ page.icon }}"
-		}{% if forloop.last == false %},{% endif %}
+		}{% unless forloop.last %},{% endunless %}
 	{% endif %}
 {% endfor %}
 }
