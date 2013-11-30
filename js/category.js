@@ -28,23 +28,16 @@ var loadThreads = function(cursor){
 		    		}
 		    		$('#threads').mustache('thread', thread);
 				});
+	    		$('.pager .next, .pager .previous').unbind('click').addClass('disabled');
 		    	if(result.cursor.hasNext){
-		    		$('.pager .next').removeClass('disabled');
-		    		$('.pager .next').click(function(){
+		    		$('.pager .next').removeClass('disabled').click(function(){
 		    			loadThreads(result.cursor.next);
 		    		})
-		    	} else {
-		    		$('.pager .next').addClass('disabled');
-		    		$('.pager .next').unbind('click');
 		    	}
 		    	if(result.cursor.hasPrev){
-		    		$('.pager .previous').removeClass('disabled');
-		    		$('.pager .previous').click(function(){
+		    		$('.pager .previous').removeClass('disabled').click(function(){
 		    			loadThreads(result.cursor.prev);
 		    		})
-		    	} else {
-		    		$('.pager .previous').addClass('disabled');
-		    		$('.pager .previous').unbind('click');
 		    	}
 				$.each(authors,function(idx, author){
 					$.ajax({
