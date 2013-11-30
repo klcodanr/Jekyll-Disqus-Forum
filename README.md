@@ -1,4 +1,4 @@
-Github-Forum
+Jekyll-Disqus-Forum
 ============
 
 A simple forum with pages managed by Jekyll and threads powered by Disqus.  Check out our [sample site](http://klcodanr.github.io/Jekyll-Disqus-Forum/).
@@ -46,7 +46,7 @@ Once you are done, go ahead and updating the `group-id` of some categories.
 
 ## Creating Categories
 
-First, create the category in Disqus.  Login and go to Admin >> Settings >> Advanced.  Click `Add New Category` and then give your category a name.  Click `Save Changes` and note the category id.
+First, create the category in Disqus.  Login and go to Admin >> Settings >> Advanced.  Click *Add New Category* and then give your category a name.  Click *Save Changes* and note the category id.
 
 Next, create a new page in the categories directory.  It must have the following settings:
 
