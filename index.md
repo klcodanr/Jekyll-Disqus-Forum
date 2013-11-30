@@ -2,4 +2,6 @@
 layout: home
 ---
 
-<h1>Hello World</h1>
+# Jekyll Disqus Forum
+
+A simple forum managed by Jekyll and powered by Disqus?  Find out more on [github](http://www.github.com/klcodanr/Jekyll-Disqus-Forum).
