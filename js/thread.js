@@ -28,11 +28,18 @@ document.title = threadName + ' | ' + document.title;
 $('.thread-title').html(threadName);
 
 // Get the category data
-$.getJSON('{{ site.baseurl }}/categories.json', function(categories){
-	var category = categories[categoryId];
-	$('.category-link').html(category.title);
-	$('.category-link').attr('href', category.url);
+$.ajax({
+	type: 'GET',
+	url: "{{ site.baseurl }}/categories.json",
+	cache: false,
+	dataType: "json",
+	success: function (categories) {
+		var category = categories[categoryId];
+		$('.category-link').html(category.title);
+		$('.category-link').attr('href', category.url);
+	}
 });
+
 
 // Include the Disqus Component
 (function() {
