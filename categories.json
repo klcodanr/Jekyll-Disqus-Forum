@@ -5,10 +5,10 @@ layout: none
 {% for page in site.pages %}
 	{% if page.category == true %}
 		"{{ page.id }}" : {
-			id: {{ page.id }},
-			title: "{{ page.title }}",
-			url: "{{ site.url }}{{ page.url }}",
-			icon: "{{ page.icon }}"
+			"id": {{ page.id }},
+			"title": "{{ page.title }}",
+			"url": "{{ site.url }}{{ page.url }}",
+			"icon": "{{ page.icon }}"
 		}{% if forloop.last == false %},{% endif %}
 	{% endif %}
 {% endfor %}
