@@ -3,7 +3,7 @@ layout: category
 title: Setup Help
 category: true
 summary: Get help setting up the Jekyll Disqus Forum
-id: 2734429
+id: 2736938
 group-id: help
 ---
 
