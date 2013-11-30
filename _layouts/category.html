@@ -12,11 +12,16 @@ scripts: [/js/category.js]
 </ol>
 <form id="new-thread" class="form-inline" role="form" action="{{ site.baseurl }}/thread.html">
 	<div class="form-group">
-		<input type="text" class="form-control" id="thread-ui" placeholder="Enter thread subject" /><br/>
+		<label class="sr-only" for="thread-ui">Thread Subject</label>	
+		<input type="text" class="form-control" id="thread-ui" placeholder="Enter thread subject" />
+		<div class="help-block hidden">Please enter a valid thread title</div>
 	</div>
 	<input type="hidden" name="category" value="{{ page.id }}" />
 	<input type="hidden" name="thread" class="thread" value="" />
-	<button type="submit" class="btn btn-default">New Thread</button>
+	<div class="form-group">
+		<button type="submit" class="btn btn-default">New Thread</button>
+		<div class="help-block hidden">&nbsp;</div>
+	</div>
 </form>
 <small>Created as: <em><span class="thread"></span></em></small>
 <h2>Threads</h2>

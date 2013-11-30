@@ -72,7 +72,8 @@ $('#thread-ui').keyup(function(){
 });
 $('#new-thread').submit(function(){
 	if($('.thread').val() == ''){
-		alert('Please enter a thread title');
+		$('#new-thread .form-group').addClass('has-error');
+		$('#new-thread .help-block').removeClass('hidden');
 		return false;
 	}
 });
