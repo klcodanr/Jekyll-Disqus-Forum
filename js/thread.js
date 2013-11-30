@@ -28,7 +28,7 @@ document.title = threadName + ' | ' + document.title;
 $('.thread-title').html(threadName);
 
 // Get the category data
-$.getJSON('{{ site.baseurl }}', function(categories){
+$.getJSON('{{ site.baseurl }}/categories.json', function(categories){
 	var category = categories[categoryId];
 	$('.category-link').html(category.title);
 	$('.category-link').attr('href', category.url);
