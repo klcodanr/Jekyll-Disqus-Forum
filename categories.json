@@ -1,6 +1,7 @@
 ---
 layout: none
 ---
+
 {
 {% for page in site.pages %}
 	{% if page.category == true %}
