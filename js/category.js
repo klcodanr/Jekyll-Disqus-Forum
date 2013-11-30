@@ -3,6 +3,7 @@ layout: none
 ---
 
 var loadThreads = function(cursor){
+	$("#threads").html('');
 	var data = { 
 		api_key: '{{ site.disqus_publickey }}',
 		category : $('#threads').attr('data-id')
@@ -63,4 +64,4 @@ var loadThreads = function(cursor){
 		}
 	});
 }
-
+loadThreads();
