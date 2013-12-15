@@ -27,6 +27,12 @@ var loadThreads = function(cursor){
 		    		if(authors.indexOf(thread.author) == -1){
 		    			authors.push(thread.author);
 		    		}
+		    		if(thread.isClosed){
+		    			thread['status'] = 'glyphicon glyphicon-lock';
+		    		}
+		    		if(thread.isDeleted){
+		    			return;
+		    		}
 		    		$('#threads').mustache('thread', thread);
 				});
 	    		$('.pager .next, .pager .previous').unbind('click').addClass('disabled');
