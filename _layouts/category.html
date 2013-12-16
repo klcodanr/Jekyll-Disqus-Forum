@@ -20,14 +20,22 @@ scripts: [/js/category.js]
 	</div>
 	<div id="new-thread-container" class="panel-collapse collapse">
 		<div class="panel-body">
-			<form id="new-thread" class="form-inline" role="form" action="{{ site.baseurl }}/thread.html">
+			<form id="new-thread" role="form" action="{{ site.baseurl }}/thread.html">
 				<div class="form-group">
 					<label class="sr-only" for="thread-ui">Thread Subject</label>	
 					<input type="text" class="form-control" id="thread-ui" placeholder="Enter thread subject" />
 					<div class="help-block hidden">Please enter a valid thread title</div>
 				</div>
+				<div class="form-group">
+					<label class="sr-only" for="thread-ui">Thread Content</label>	
+					<textarea class="form-control" id="message-ui" placeholder="Enter thread message"></textarea>
+					<div class="help-block hidden">Please enter a valid thread content</div>
+				</div>
+				<input type="hidden" name="forum" value="{{ site.disqus_shortname }}" />
 				<input type="hidden" name="category" value="{{ page.id }}" />
-				<input type="hidden" name="thread" class="thread" value="" />
+				<input type="hidden" name="title" id="title" value="" />
+				<input type="hidden" name="message" id="message" value="" />
+				<input type="hidden" name="api_key" value="{{ site.disqus_publickey }}" />
 				<div class="form-group">
 					<button type="submit" class="btn btn-default">Create Thread</button>
 					<div class="help-block hidden">&nbsp;</div>
