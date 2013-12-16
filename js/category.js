@@ -14,7 +14,7 @@ var loadThreads = function(cursor){
 	}
 	$.ajax({
 		type: 'GET',
-		url: "https://disqus.com/api/3.0/categories/listThreads.json",
+		url: "https://disqus.com/api/3.0/categories/listThreads.jsonp",
 		data: data,
 		cache: false,
 		dataType: "jsonp",
@@ -65,35 +65,21 @@ var loadThreads = function(cursor){
 	});
 }
 loadThreads();
-var sanitize = function(){
-	$('#title').val($("<div>"+$('#thread-ui').val()+"</div>").text());
-	$('#message').val($("<div>"+$('#message-ui').val()+"</div>").text());
+var sanitizeThread = function(){
+	var sanitized = $("<div>"+$('#thread-ui').val()+"</div>").text();
+	$('input.thread').val(sanitized);
+	$('span.thread').html(sanitized);
 }
 $('#thread-ui').change(function(){
-	sanitize();
+	sanitizeThread();
 });
 $('#thread-ui').keyup(function(){
-	sanitize();
+	sanitizeThread();
 });
 $('#new-thread').submit(function(){
-	sanitize();
-	$.ajax({
-		dataType: 'jsonp',
-		url: 'https://disqus.com/api/3.0/threads/create.jsonp',
-		data: $('#new-thread').serialize(),
-		type: "POST",
-		success: function(data){
-			window.data = data;
-			alert('success');
-		},
-		error: function( jqXHR, textStatus, errorThrown){
-			alert('Fail: '+textStatus+' '+errorThrown);
-		}
-	})
 	if($('.thread').val() == ''){
 		$('#new-thread .form-group').addClass('has-error');
 		$('#new-thread .help-block').removeClass('hidden');
 		return false;
 	}
-	return false;
 });
