@@ -18,7 +18,7 @@ Follow these five steps to set up your own copy of Jekyll Discuss Forums:
         git clone https://github.com/klcodanr/Jekyll-Disqus-Forum.git forum
         cd forum
         git remote set-url origin git@github.com:USERNAME/forum.git
-        git push origin master
+        git push origin gh-pages
 
 3. **Setup Disqus**
 
