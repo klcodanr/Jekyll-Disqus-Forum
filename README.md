@@ -42,7 +42,7 @@ Create a new page in the category-groups folder, it should have the following se
 * *layout* - default is category-group, but doesn't really matter
 * *summary* - displayed as descriptive text on the category group listing
 
-Once you are done, go ahead and updating the `group-id` of some categories.
+Once you are done, go ahead and update the `group-id` of some categories.
 
 ## Creating Categories
 
